@@ -1,0 +1,425 @@
+$bgGrey: #ffffff;
+$gray80: #333333;
+$gray60: #666666;
+$gray40: #dddddd;
+$gray10: #f2f2f2;
+$red: #c75c5c;
+$redDark: #8d5050;
+$blue: #4f5d73;
+$blueLigh: #77b3d4;
+$yellow: #e0e0d1;
+$yellowLight: #f3f3e9;
+$green: #76c2af;
+$greenDark: #69978c;
+$orange: #e0995e;
+
+@mixin transition-duration($time) {
+    -webkit-transition-duration: $time;
+    -moz-transition-duration: $time;
+    -o-transition-duration: $time;
+    -ms-transition-duration: $time;
+    transition-duration: $time;
+}
+
+
+/* ------------------------ PCS ------------------------ */
+//@media screen and (min-width: 1191px) {
+@media screen and (min-width: 791px) {
+
+    body { 
+        background-color: $bgGrey;
+        margin: 0 auto;
+        position: relative;
+        color: $gray80;
+        font-family: arial, times;
+        font-size: 12px;
+    } 
+    * {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    a {
+        color: $bgGrey;
+        text-decoration: none;
+        padding: 2px 4px;
+        display: inline-block;
+        @include transition-duration(0.5s);
+        &:hover, &:focus {
+            color: $bgGrey;
+            text-decoration: none;
+        }
+    }
+    
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+    header {
+        position: relative;
+        width: 100vw;
+        height: 5vh;
+        padding: 0.5vw 1vw;
+        background-color: $gray40;
+        font-size: 1vw;
+        h3.title {
+            border-bottom: 3px solid $yellowLight;
+            color: $gray60;
+            font-size: 1.5vw;
+            font-weight: normal;
+            margin: 0 0 0.5vw;
+            padding: 0 0 0.5vw;
+            width: 100%;
+        }
+    }
+
+    footer {
+        position: relative;
+        width: 100vw;
+        height: 2vh;
+        background-color: $gray40;
+        font-size: 0.7vw;
+        padding: 0.1vw 0.8vw;
+    }
+
+    div#main {
+        width: 100vw;
+        min-height: 100vh;
+        aside {
+            width: 25vw;
+            min-height: 93vh;
+            padding: 1vw;
+            float: left;
+            background-color: $bgGrey;
+        }
+        section#middle {
+            min-height: 100vh;
+            width: 75vw;
+            padding: 2vw;
+            margin: 0;
+            float: left;
+            font-size: 1vw;
+            background-color: $gray10;
+        }
+    }
+
+    .widget {
+        header {
+            width: 100%;
+            height: auto;
+            padding: 0;
+            background-color: transparent;
+            ul {
+                width: 100%;
+                padding: 0;
+                margin: 0;
+                display: table;
+                li {
+                    list-style: none;
+                    margin: 0;
+                    padding: 1vw 1.3vw;
+                    display: block;
+                }
+                li.progressbar {
+                    width: 75%;
+                    font-size: 105%;
+                    text-align: center;
+                    color: $gray80;
+                    background-color: $yellow;
+                    display: table-cell;
+                }
+                li.storage {
+                    background: url('../images/icon-config.svg') center center no-repeat;
+                    background-color: $red;
+                    background-size: contain;
+                    width: 25%;
+                    display: table-cell;
+                    font-size: 100%;
+                    text-align: center;
+                    color: $bgGrey;
+                    cursor: pointer;
+                    line-height: 150%;
+                    @include transition-duration(0.5s);
+                    &:hover {
+                        background-color: $redDark;
+                    }
+                }
+            }
+            
+        }
+        section.files {
+            width: 100%;
+            margin: 2vw 0;
+            article {
+                width: 100%;
+                padding: 0.5vw;
+                margin: 0.5vw 0;
+                background-color: $yellowLight;
+                display: table;
+                cursor: pointer;
+                position: relative;
+                @include transition-duration(0.5s);
+                &:hover {
+                    background-color: $yellow;
+                    .details .icon-info {
+                        opacity: 0.5;
+                    }
+                }
+                figure {
+                    margin: 0;
+                    padding: 0;
+                    width: 22%;
+                    float: left;
+                    overflow: hidden;
+                    position: relative;
+                    img {
+                        position: relative;
+                        width: 100%;
+                        height: 100%;
+                    }
+                    figcaption {}
+                }
+                .details {
+                    width: 75%;
+                    float: right;
+                    .icon-file {
+                        background: url('../images/icon-file.svg') 0 0 no-repeat;
+                        background-size: contain;
+                        height: 2vw;
+                        display: block;
+                        margin: 0.3vw 0 0.5vw 0;
+                        padding: 0.3vw 0 0.5vw 2.5vw;
+                        font-size: 100%;
+                        overflow: hidden;
+                        line-height: 2.5vh;
+                    }
+                    .icon-size {
+                        background: url('../images/icon-size.svg') 0 0 no-repeat;
+                        background-size: contain;
+                        height: 2vw;
+                        display: block;
+                        margin: 0.5vw 0 -1vw 0;
+                        padding: 0.4vw 0 0 2.5vw;
+                        font-size: 100%;
+                        overflow: hidden;
+                        line-height: 2.5vh;
+                        .date {
+                            font-style: italic;
+                            font-size: 0.8vw;
+                            color: $gray60;
+                            margin: 0 0 0 0.5vw;
+                        }
+                    }
+                    .icon-info {
+                        background: url('../images/icon-info.svg') 0 0 no-repeat;
+                        background-size: contain;
+                        bottom: 0.5vw;
+                        right: 0.5vw;
+                        width: 1.3vw;
+                        height: 1.3vw;
+                        position: absolute;
+                        opacity: 0;
+                        @include transition-duration(0.5s);
+                    }
+                }
+            }
+        }
+    }
+    
+}
+
+
+
+
+/* ------------------------ SPARTPHONES ------------------------ */
+@media screen and (max-width: 790px) {
+    body { 
+        background-color: $bgGrey;
+        margin: 0 auto;
+        position: relative;
+        color: $gray80;
+        font-family: arial, times;
+        font-size: 12px;
+    } 
+    * {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    a {
+        color: $bgGrey;
+        text-decoration: none;
+        padding: 2px 4px;
+        display: inline-block;
+        @include transition-duration(0.5s);
+        &:hover, &:focus {
+            color: $bgGrey;
+            text-decoration: none;
+        }
+    }
+    
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+    div#main {
+        width: 100vw;
+        min-height: 100vh;
+        aside {
+            width: 100vw;
+            min-height: 93vh;
+            padding: 4vw;
+            background-color: $bgGrey;
+        }
+        section#middle {
+            display: none;
+        }
+    }
+
+    .widget {
+        header {
+            width: 100%;
+            height: auto;
+            padding: 0;
+            margin: 3vw 0 2.5vw 0;
+            background-color: transparent;
+            h3.title {
+                border-bottom: 3px solid $yellowLight;
+                color: $gray60;
+                font-size: 4.5vw;
+                font-weight: normal;
+                text-align: left;
+                margin: 0 0 2vw 0;
+                padding: 0 0 1.5vw;
+                width: 100%;
+            }
+            ul {
+                width: 100%;
+                padding: 0;
+                margin: 0;
+                display: table;
+                li {
+                    list-style: none;
+                    margin: 0;
+                    padding: 3vw;
+                    display: block;
+                }
+                li.progressbar {
+                    width: 75%;
+                    font-size: 85%;
+                    text-align: center;
+                    color: $gray80;
+                    display: table-cell;
+                    background-color: $yellow;
+                }
+                li.storage {
+                    background: url('../images/icon-config.svg') center center no-repeat;
+                    background-color: $red;
+                    background-size: contain;
+                    width: 25%;
+                    display: table-cell;
+                    font-size: 80%;
+                    text-align: center;
+                    color: $bgGrey;
+                    cursor: pointer;
+                    line-height: 150%;
+                    @include transition-duration(0.5s);
+                    &:hover {
+                        background-color: $redDark;
+                    }
+                }
+            }
+            
+        }
+        section.files {
+            width: 100%;
+            margin: 8vw 0;
+            article {
+                width: 100%;
+                padding: 1.5vw;
+                margin: 2vw 0;
+                background-color: $yellowLight;
+                display: table;
+                cursor: pointer;
+                position: relative;
+                @include transition-duration(0.5s);
+                &:hover {
+                    background-color: $yellow;
+                    .details .icon-info {
+                        opacity: 0.5;
+                    }
+                }
+                figure {
+                    margin: 0;
+                    padding: 0;
+                    width: 22%;
+                    float: left;
+                    overflow: hidden;
+                    position: relative;
+                    img {
+                        position: relative;
+                        width: 100%;
+                        height: 100%;
+                    }
+                    figcaption {}
+                }
+                .details {
+                    width: 75%;
+                    float: right;
+                    .icon-file {
+                        background: url('../images/icon-file.svg') 0 0 no-repeat;
+                        background-size: contain;
+                        height: 6vw;
+                        display: block;
+                        margin: 2.5vw 0;
+                        padding: 0.3vw 0 0 7.5vw;
+                        font-size: 4vw;
+                    }
+                    .icon-size {
+                        background: url('../images/icon-size.svg') 0 0 no-repeat;
+                        background-size: contain;
+                        height: 6vw;
+                        display: block;
+                        margin: 2.5vw 0;
+                        padding: 0.3vw 0 0 7.5vw;
+                        font-size: 4vw;
+                        .date {
+                            font-style: italic;
+                            font-size: 2.5vw;
+                            color: $gray60;
+                            margin: 0 0 0 3vw;
+                        }
+                    }
+                    .icon-info {
+                        background: url('../images/icon-info.svg') 0 0 no-repeat;
+                        background-size: contain;
+                        bottom: 2vw;
+                        right: 2vw;
+                        width: 4vw;
+                        height: 4vw;
+                        position: absolute;
+                        opacity: 0;
+                        @include transition-duration(0.5s);
+                    }
+                }
+            }
+        }
+    }
+    
+}
+
+
+
+.btn-primary {
+    background-image: linear-gradient(to bottom, #618DC1 0px, #4F5D73 100%) !important;
+    border-color: #618DC1 !important;
+    @include transition-duration(0.5s);
+    &:hover {
+        background-image: linear-gradient(to bottom, #4F5D73 0px, #618DC1 100%) !important;
+        background-position: 0 !important;
+    }
+}
